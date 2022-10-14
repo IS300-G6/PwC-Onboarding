@@ -41,7 +41,7 @@
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="54">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="108">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -95,6 +95,11 @@
       <AssemblyReference>System.Text.RegularExpressions</AssemblyReference>
       <AssemblyReference>System.Collections</AssemblyReference>
       <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.Linq.Parallel</AssemblyReference>
+      <AssemblyReference>System.Collections.Immutable</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Linq.Queryable</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
   <Sequence sap:VirtualizedContainerService.HintSize="688.8,737.6" sap2010:WorkflowViewState.IdRef="Sequence_6">
@@ -119,7 +124,7 @@
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <av:Point x:Key="ShapeLocation">270,2.5</av:Point>
           <av:Size x:Key="ShapeSize">60,75.2</av:Size>
-          <av:PointCollection x:Key="ConnectorLocation">300,77.7 300,107.7 267.6,107.7 267.6,117.7</av:PointCollection>
+          <av:PointCollection x:Key="ConnectorLocation">300,77.7 300,118.80000000000001</av:PointCollection>
           <x:Double x:Key="Width">612.3</x:Double>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
@@ -129,11 +134,11 @@
       <FlowStep x:Name="__ReferenceID0">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-            <av:Point x:Key="ShapeLocation">167.60000000000002,258.8</av:Point>
-            <av:Size x:Key="ShapeSize">216,62.4</av:Size>
+            <av:Point x:Key="ShapeLocation">200,248.8</av:Point>
+            <av:Size x:Key="ShapeSize">200,62.4</av:Size>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: Dun &amp; Bradstreet - Accelerate Growth and Improve Business Performance" sap:VirtualizedContainerService.HintSize="522.4,2675.2" sap2010:WorkflowViewState.IdRef="NApplicationCard_3" InteractionMode="DebuggerApi" ScopeGuid="396561c3-7be8-45b4-a67f-ed6ee06d7913" Version="V1">
+        <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: Dun &amp; Bradstreet - Accelerate Growth and Improve Business Performance" sap:VirtualizedContainerService.HintSize="200,62.4" sap2010:WorkflowViewState.IdRef="NApplicationCard_3" InteractionMode="DebuggerApi" ScopeGuid="396561c3-7be8-45b4-a67f-ed6ee06d7913" Version="V1">
           <uix:NApplicationCard.Body>
             <ActivityAction x:TypeArguments="x:Object">
               <ActivityAction.Argument>
@@ -210,9 +215,9 @@
                     <InArgument x:TypeArguments="x:String">[ExtractDataTable.Rows(5).Item(0).Tostring]</InArgument>
                   </Assign.Value>
                 </Assign>
-                <ui:Matches sap:VirtualizedContainerService.HintSize="356.8,375.2" sap2010:WorkflowViewState.IdRef="Matches_1" Input="[employees]" IsBuilderTabModified="False" Pattern="([0-9]+)" RegexOption="IgnoreCase, Compiled, IgnorePatternWhitespace, ECMAScript, CultureInvariant" Result="[employeeMatches]" />
-                <ui:Matches sap:VirtualizedContainerService.HintSize="356.8,375.2" sap2010:WorkflowViewState.IdRef="Matches_3" Input="[revenue]" IsBuilderTabModified="False" Pattern="([0-9]+)" RegexOption="IgnoreCase, Compiled, IgnorePatternWhitespace" Result="[revenueMatches]" />
-                <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="356.8,95.2" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[&quot;--ADDRESS-- &quot; + address + &quot;--EMPLOYEES-- &quot; + employeeMatches.ToString + &#xD;&#xA;&quot;--REVENUE-- &quot; + revenueMatches.ToString]" />
+                <ui:Matches sap:VirtualizedContainerService.HintSize="356.8,375.2" sap2010:WorkflowViewState.IdRef="Matches_1" Input="[employees]" IsBuilderTabModified="False" Pattern="([0-9]+)" RegexOption="IgnoreCase, Compiled, IgnorePatternWhitespace" Result="[employeeMatches]" />
+                <ui:Matches sap:VirtualizedContainerService.HintSize="356.8,375.2" sap2010:WorkflowViewState.IdRef="Matches_3" Input="[revenue]" IsBuilderTabModified="False" Pattern="($[0-9]+[a-z]+)" RegexOption="IgnoreCase, Compiled, IgnorePatternWhitespace" Result="[revenueMatches]" />
+                <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="356.8,95.2" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[&quot;--ADDRESS-- &quot; + address + &quot;--EMPLOYEES-- &quot; + employeeMatches.First().ToString + &#xD;&#xA;&quot;--REVENUE-- &quot; + revenueMatches.First().ToString]" />
               </Sequence>
             </ActivityAction>
           </uix:NApplicationCard.Body>
@@ -229,9 +234,9 @@
       <FlowStep x:Name="__ReferenceID1">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-            <av:Point x:Key="ShapeLocation">167.6,117.7</av:Point>
+            <av:Point x:Key="ShapeLocation">200,118.80000000000001</av:Point>
             <av:Size x:Key="ShapeSize">200,62.4</av:Size>
-            <av:PointCollection x:Key="ConnectorLocation">267.6,180.1 267.6,210.1 275.6,210.1 275.6,258.8</av:PointCollection>
+            <av:PointCollection x:Key="ConnectorLocation">300,181.20000000000002 300,248.8</av:PointCollection>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
         <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="200,62.4" sap2010:WorkflowViewState.IdRef="InputDialog_1" IsPassword="False" Label="Please enter the company name (for testing purposes)" Title="Company Name">
