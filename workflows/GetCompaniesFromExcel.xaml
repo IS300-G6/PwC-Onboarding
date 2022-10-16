@@ -7,7 +7,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>624,700.6666666666666</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1091,701</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>GetCompaniesFromExcel_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="64">
@@ -47,7 +47,7 @@
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="31">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="62">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -79,6 +79,21 @@
       <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
       <AssemblyReference>System.Private.Xml</AssemblyReference>
       <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.Collections.Immutable</AssemblyReference>
+      <AssemblyReference>System.Linq.Parallel</AssemblyReference>
+      <AssemblyReference>System.Linq.Queryable</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
   <sap:WorkflowViewStateService.ViewState>
@@ -95,34 +110,47 @@
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         <av:Point x:Key="ShapeLocation">258,0</av:Point>
-        <av:Size x:Key="ShapeSize">60,74.66666666666667</av:Size>
-        <av:PointCollection x:Key="ConnectorLocation">288,74.66666666666667 288,104.66666666666667 300,104.66666666666667 300,135.33333333333334</av:PointCollection>
+        <av:Size x:Key="ShapeSize">60,75</av:Size>
+        <av:PointCollection x:Key="ConnectorLocation">288,75 288,125</av:PointCollection>
         <x:Double x:Key="Width">600</x:Double>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <Flowchart.StartNode>
-      <x:Reference>__ReferenceID0</x:Reference>
+      <x:Reference>__ReferenceID1</x:Reference>
     </Flowchart.StartNode>
-    <FlowStep x:Name="__ReferenceID0">
+    <FlowStep x:Name="__ReferenceID1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <av:Point x:Key="ShapeLocation">199.99999999999997,135.33333333333334</av:Point>
-          <av:Size x:Key="ShapeSize">200,69.33333333333333</av:Size>
+          <av:Point x:Key="ShapeLocation">188,125</av:Point>
+          <av:Size x:Key="ShapeSize">200,51</av:Size>
+          <av:PointCollection x:Key="ConnectorLocation">288,176 288,226</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <Sequence DisplayName="GetInfoComp" sap:VirtualizedContainerService.HintSize="376,402" sap2010:WorkflowViewState.IdRef="Sequence_5">
-        <Sequence.Variables>
-          <Variable x:TypeArguments="x:String" Name="CSV_Data" />
-        </Sequence.Variables>
-        <sap:WorkflowViewStateService.ViewState>
-          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-          </scg:Dictionary>
-        </sap:WorkflowViewStateService.ViewState>
-        <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[CompDT]" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="334,86.66666666666667" sap2010:WorkflowViewState.IdRef="ReadRange_2" SheetName="Sheet1" WorkbookPath="Companies list.xlsx" />
-        <ui:OutputDataTable DataTable="[CompDT]" DisplayName="Output Data Table" sap:VirtualizedContainerService.HintSize="334,80.66666666666667" sap2010:WorkflowViewState.IdRef="OutputDataTable_1" Text="[CSV_Data]" />
-        <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="334,62.666666666666664" sap2010:WorkflowViewState.IdRef="WriteLine_2" Text="[CSV_Data]" />
-      </Sequence>
+      <ui:ReadRange AddHeaders="True" DataTable="[CompDT]" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="ReadRange_3" Range="A1:A12" SheetName="Sheet1" WorkbookPath="[excelFilePath]" />
+      <FlowStep.Next>
+        <FlowStep x:Name="__ReferenceID0">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <av:Point x:Key="ShapeLocation">157,226</av:Point>
+              <av:Size x:Key="ShapeSize">262,60</av:Size>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_1">
+            <Assign.To>
+              <OutArgument x:TypeArguments="s:String[]">[result]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="s:String[]">[(From row in CompDT.AsEnumerable() Select Convert.Tostring(row(0))).ToArray()]</InArgument>
+            </Assign.Value>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </Assign>
+        </FlowStep>
+      </FlowStep.Next>
     </FlowStep>
+    <x:Reference>__ReferenceID0</x:Reference>
   </Flowchart>
 </Activity>
