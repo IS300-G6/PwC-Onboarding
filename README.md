@@ -4,7 +4,7 @@
 1) Install UI path
 2) Clone the repository in UI path
 3) Go to Main.xaml
-4) Make sure you have an excel file with the following format stored somewhere on the computer
+4) Make sure you have an excel file with the following format stored somewhere on the computer. You can use the Companies list.xlsx file for testing purposes.
 ![image](https://user-images.githubusercontent.com/24401134/196056489-fc96d7dc-6ab4-4b1a-be6f-9126e201fabf.png)
 
 5) Press 'Debug file' button -> then select 'Run' (Or do ctrl + F5)
