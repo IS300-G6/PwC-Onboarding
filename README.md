@@ -7,7 +7,7 @@
 4) Make sure you have an excel file with the following format stored somewhere on the computer
 ![image](https://user-images.githubusercontent.com/24401134/196056489-fc96d7dc-6ab4-4b1a-be6f-9126e201fabf.png)
 
-5) Press 'Debug file' button
+5) Press 'Debug file' button -> then select 'Run'
 ![image](https://user-images.githubusercontent.com/24401134/196056460-b36a2c33-d1cf-463b-8e20-cfba6c33c353.png)
 
 6) Select the excel file when the prompt shows up
