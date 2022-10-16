@@ -7,7 +7,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1402,974.5</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1216,952.8</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ProcessCompany_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -32,10 +32,13 @@
       <x:String>System.Windows.Markup</x:String>
       <x:String>UiPath.Core</x:String>
       <x:String>UiPath.Core.Activities</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Reflection</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <sco:Collection x:TypeArguments="AssemblyReference">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="40">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -69,15 +72,21 @@
       <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
       <AssemblyReference>System.Security.Permissions</AssemblyReference>
       <AssemblyReference>UiPath.Workflow</AssemblyReference>
-    </sco:Collection>
+      <AssemblyReference>UiPath.OCR.Core</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+    </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Flowchart DisplayName="ProcessCompany" sap:VirtualizedContainerService.HintSize="714,909.5" sap2010:WorkflowViewState.IdRef="Flowchart_1">
+  <Flowchart DisplayName="ProcessCompany" sap:VirtualizedContainerService.HintSize="694.4,888" sap2010:WorkflowViewState.IdRef="Flowchart_1">
     <Flowchart.Variables>
       <Variable x:TypeArguments="x:String" Name="address" />
-      <Variable x:TypeArguments="x:Int32" Name="annualRevenue" />
+      <Variable x:TypeArguments="x:String" Name="annualRevenue" />
       <Variable x:TypeArguments="x:String" Name="companyNumber" />
-      <Variable x:TypeArguments="x:Int32" Name="dunsNumber" />
-      <Variable x:TypeArguments="x:Int32" Name="employees" />
+      <Variable x:TypeArguments="x:String" Name="dunsNumber" />
+      <Variable x:TypeArguments="x:String" Name="employees" />
       <Variable x:TypeArguments="x:String" Name="errorEncountered" />
       <Variable x:TypeArguments="x:Int32" Name="NZBN" />
     </Flowchart.Variables>
@@ -85,8 +94,8 @@
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         <av:Point x:Key="ShapeLocation">170,0</av:Point>
-        <av:Size x:Key="ShapeSize">60,75</av:Size>
-        <av:PointCollection x:Key="ConnectorLocation">200,75 200,125</av:PointCollection>
+        <av:Size x:Key="ShapeSize">60,75.2</av:Size>
+        <av:PointCollection x:Key="ConnectorLocation">200,75.2 200,125</av:PointCollection>
         <x:Double x:Key="Width">680</x:Double>
         <x:Double x:Key="Height">873.5</x:Double>
       </scg:Dictionary>
@@ -98,39 +107,46 @@
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <av:Point x:Key="ShapeLocation">100,769</av:Point>
-          <av:Size x:Key="ShapeSize">200,52</av:Size>
+          <av:Size x:Key="ShapeSize">200,62.4</av:Size>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[New Object() { companyName, NZBN, companyNumber, address, employees, annualRevenue, dunsNumber }]" DataTable="[results]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="AddDataRow_1" />
+      <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[New Object() { companyName, NZBN, companyNumber, address, employees, annualRevenue, dunsNumber }]" DataTable="[results]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="200,62.4" sap2010:WorkflowViewState.IdRef="AddDataRow_1" />
     </FlowStep>
     <FlowStep x:Name="__ReferenceID6">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <av:Point x:Key="ShapeLocation">100,125</av:Point>
-          <av:Size x:Key="ShapeSize">200,52</av:Size>
-          <av:PointCollection x:Key="ConnectorLocation">200,176 200,236.5</av:PointCollection>
+          <av:Size x:Key="ShapeSize">200,62.4</av:Size>
+          <av:PointCollection x:Key="ConnectorLocation">200,187.4 200,217.4 199.5,217.4 199.5,236.5</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="GetInfoFromDunAndBradstreet" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="workflows\GetInfoFromDunAndBradstreet.xaml">
+      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="GetInfoFromDunAndBradstreet" sap:VirtualizedContainerService.HintSize="200,62.4" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="workflows\GetInfoFromDunAndBradstreet.xaml">
         <ui:InvokeWorkflowFile.Arguments>
-          <InArgument x:TypeArguments="x:String" x:Key="companyName">[companyName]</InArgument>
-          <OutArgument x:TypeArguments="x:Int32" x:Key="annualRevenue">[annualRevenue]</OutArgument>
-          <OutArgument x:TypeArguments="x:Int32" x:Key="dunsNumber">[dunsNumber]</OutArgument>
-          <OutArgument x:TypeArguments="x:Int32" x:Key="employees">[employees]</OutArgument>
-          <OutArgument x:TypeArguments="x:String" x:Key="errorEncountered">[errorEncountered]</OutArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="companyName">
+            <VisualBasicValue x:TypeArguments="x:String" ExpressionText="companyName" />
+          </InArgument>
+          <OutArgument x:TypeArguments="x:String" x:Key="annualRevenue">
+            <VisualBasicReference x:TypeArguments="x:String" ExpressionText="annualRevenue" />
+          </OutArgument>
+          <OutArgument x:TypeArguments="x:String" x:Key="employees">
+            <VisualBasicReference x:TypeArguments="x:String" ExpressionText="employees" />
+          </OutArgument>
+          <OutArgument x:TypeArguments="x:String" x:Key="errorEncountered">
+            <VisualBasicReference x:TypeArguments="x:String" ExpressionText="errorEncountered" />
+          </OutArgument>
         </ui:InvokeWorkflowFile.Arguments>
       </ui:InvokeWorkflowFile>
       <FlowStep.Next>
-        <FlowDecision x:Name="__ReferenceID4" Condition="[String.IsNullOrEmpty(errorEncountered)]" DisplayName="Check for error" sap:VirtualizedContainerService.HintSize="86,87" sap2010:WorkflowViewState.IdRef="FlowDecision_2">
+        <FlowDecision x:Name="__ReferenceID4" Condition="[String.IsNullOrEmpty(errorEncountered)]" DisplayName="Check for error" sap:VirtualizedContainerService.HintSize="84,87.2" sap2010:WorkflowViewState.IdRef="FlowDecision_2">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               <av:Point x:Key="ShapeLocation">157.5,236.5</av:Point>
-              <av:Size x:Key="ShapeSize">86,87</av:Size>
-              <av:PointCollection x:Key="TrueConnector">157.5,280 50,280 50,430 80,430</av:PointCollection>
+              <av:Size x:Key="ShapeSize">84,87.2</av:Size>
+              <av:PointCollection x:Key="TrueConnector">157.5,280.1 50,280.1 50,435.7 80,435.7</av:PointCollection>
               <x:String x:Key="TrueLabel">No error</x:String>
               <x:String x:Key="FalseLabel">Error found</x:String>
-              <av:PointCollection x:Key="FalseConnector">242.5,280 530,280 530,339</av:PointCollection>
+              <av:PointCollection x:Key="FalseConnector">241.5,280.1 530,280.1 530,339</av:PointCollection>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
           <FlowDecision.True>
@@ -138,11 +154,11 @@
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <av:Point x:Key="ShapeLocation">80,404.5</av:Point>
-                  <av:Size x:Key="ShapeSize">200,52</av:Size>
-                  <av:PointCollection x:Key="ConnectorLocation">180,455.5 180,556.5</av:PointCollection>
+                  <av:Size x:Key="ShapeSize">200,62.4</av:Size>
+                  <av:PointCollection x:Key="ConnectorLocation">180,466.9 180,496.9 179.5,496.9 179.5,556.5</av:PointCollection>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="GetInfoFromCompaniesRegister" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="workflows\GetInfoFromCompaniesRegister.xaml">
+              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="GetInfoFromCompaniesRegister" sap:VirtualizedContainerService.HintSize="360,123.19999999999999" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="workflows\GetInfoFromCompaniesRegister.xaml">
                 <ui:InvokeWorkflowFile.Arguments>
                   <InArgument x:TypeArguments="x:String" x:Key="companyName">[companyName]</InArgument>
                   <OutArgument x:TypeArguments="x:String" x:Key="address">[address]</OutArgument>
@@ -152,16 +168,16 @@
                 </ui:InvokeWorkflowFile.Arguments>
               </ui:InvokeWorkflowFile>
               <FlowStep.Next>
-                <FlowDecision x:Name="__ReferenceID3" Condition="[String.IsNullOrEmpty(errorEncountered)]" DisplayName="Check for error" sap:VirtualizedContainerService.HintSize="86,87" sap2010:WorkflowViewState.IdRef="FlowDecision_1" True="{x:Reference __ReferenceID0}">
+                <FlowDecision x:Name="__ReferenceID3" Condition="[String.IsNullOrEmpty(errorEncountered)]" DisplayName="Check for error" sap:VirtualizedContainerService.HintSize="84,87.2" sap2010:WorkflowViewState.IdRef="FlowDecision_1" True="{x:Reference __ReferenceID0}">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       <av:Point x:Key="ShapeLocation">137.5,556.5</av:Point>
-                      <av:Size x:Key="ShapeSize">86,87</av:Size>
+                      <av:Size x:Key="ShapeSize">84,87.2</av:Size>
                       <av:PointCollection x:Key="TrueConnector">137.5,600 110,600 110,739 200,739 200,769</av:PointCollection>
                       <x:String x:Key="TrueLabel">No error</x:String>
                       <x:String x:Key="FalseLabel">Error found</x:String>
-                      <av:PointCollection x:Key="FalseConnector">222.5,600 520,600 520,669</av:PointCollection>
+                      <av:PointCollection x:Key="FalseConnector">221.5,600.1 520,600.1 520,669</av:PointCollection>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                   <FlowDecision.False>
@@ -169,11 +185,11 @@
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <av:Point x:Key="ShapeLocation">420,669</av:Point>
-                          <av:Size x:Key="ShapeSize">200,52</av:Size>
-                          <av:PointCollection x:Key="ConnectorLocation">420,695 390,695 390,795 300,795</av:PointCollection>
+                          <av:Size x:Key="ShapeSize">200,62.4</av:Size>
+                          <av:PointCollection x:Key="ConnectorLocation">420,700.2 390,700.2 390,800.2 300,800.2</av:PointCollection>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{ &quot;GetCompaniesFromExcel&quot;, &quot;&quot;, errorEncountered }]" DataTable="[ErrorsEncountered]" DisplayName="Record error" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="AddDataRow_2" />
+                      <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{ &quot;GetCompaniesFromExcel&quot;, &quot;&quot;, errorEncountered }]" DataTable="[ErrorsEncountered]" DisplayName="Record error" sap:VirtualizedContainerService.HintSize="200,62.4" sap2010:WorkflowViewState.IdRef="AddDataRow_2" />
                       <FlowStep.Next>
                         <x:Reference>__ReferenceID0</x:Reference>
                       </FlowStep.Next>
@@ -188,11 +204,11 @@
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <av:Point x:Key="ShapeLocation">430,339</av:Point>
-                  <av:Size x:Key="ShapeSize">200,52</av:Size>
-                  <av:PointCollection x:Key="ConnectorLocation">430,365 400,365 400,430.5 280,430.5</av:PointCollection>
+                  <av:Size x:Key="ShapeSize">200,62.4</av:Size>
+                  <av:PointCollection x:Key="ConnectorLocation">430,370.2 400,370.2 400,435.7 280,435.7</av:PointCollection>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{ &quot;GetInfoFromDunAndBradstreet&quot;, &quot;&quot;, errorEncountered }]" DataTable="[ErrorsEncountered]" DisplayName="Record error" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="AddDataRow_3" />
+              <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{ &quot;GetInfoFromDunAndBradstreet&quot;, &quot;&quot;, errorEncountered }]" DataTable="[ErrorsEncountered]" DisplayName="Record error" sap:VirtualizedContainerService.HintSize="200,62.4" sap2010:WorkflowViewState.IdRef="AddDataRow_3" />
               <FlowStep.Next>
                 <x:Reference>__ReferenceID1</x:Reference>
               </FlowStep.Next>
