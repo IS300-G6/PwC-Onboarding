@@ -166,13 +166,13 @@
           <av:PointCollection x:Key="ConnectorLocation">212,171.20000000000002 212,201.20000000000002 220,201.20000000000002 220,225.20000000000002</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: Dun &amp; Bradstreet - Accelerate Growth and Improve Business Performance" sap:VirtualizedContainerService.HintSize="512.8,3068" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="DebuggerApi" ScopeGuid="396561c3-7be8-45b4-a67f-ed6ee06d7913" Version="V1">
+      <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: Dun &amp; Bradstreet - Accelerate Growth and Improve Business Performance" sap:VirtualizedContainerService.HintSize="512.8,2948.8" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="DebuggerApi" ScopeGuid="396561c3-7be8-45b4-a67f-ed6ee06d7913" Version="V1">
         <uix:NApplicationCard.Body>
           <ActivityAction x:TypeArguments="x:Object">
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
             </ActivityAction.Argument>
-            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="476.8,2841.6" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="476.8,2722.4" sap2010:WorkflowViewState.IdRef="Sequence_2">
               <Sequence.Variables>
                 <Variable x:TypeArguments="sd:DataTable" Default="[New System.Data.DataTable]" Name="ExtractDataTable" />
                 <Variable x:TypeArguments="scg:IEnumerable(str:Match)" Name="employeeMatches" />
@@ -236,7 +236,7 @@
                 </Assign.Value>
               </Assign>
               <ui:Matches sap:VirtualizedContainerService.HintSize="433.6,375.2" sap2010:WorkflowViewState.IdRef="Matches_1" Input="[employeesVar]" IsBuilderTabModified="False" Pattern="([0-9]+)" RegexOption="IgnoreCase, Compiled, IgnorePatternWhitespace" Result="[employeeMatches]" />
-              <ui:Matches sap:VirtualizedContainerService.HintSize="433.6,375.2" sap2010:WorkflowViewState.IdRef="Matches_2" Input="[revenueVar]" IsBuilderTabModified="False" Pattern="([0-9]+).([0-9]+) ([a-z]+)" RegexOption="IgnoreCase, Compiled, IgnorePatternWhitespace" Result="[revenueMatches]" />
+              <ui:Matches sap:VirtualizedContainerService.HintSize="433.6,375.2" sap2010:WorkflowViewState.IdRef="Matches_2" Input="[revenueVar]" IsBuilderTabModified="False" Pattern="([0-9]+).([0-9]+) ([a-z]+)" RegexOption="IgnoreCase, Compiled" Result="[revenueMatches]" />
               <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="433.6,220" sap2010:WorkflowViewState.IdRef="TryCatch_1">
                 <TryCatch.Try>
                   <Assign sap:VirtualizedContainerService.HintSize="262.4,71.2" sap2010:WorkflowViewState.IdRef="Assign_11">
@@ -293,7 +293,7 @@
                   </Catch>
                 </TryCatch.Catches>
               </TryCatch>
-              <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="433.6,339.2" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+              <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="433.6,220" sap2010:WorkflowViewState.IdRef="TryCatch_2">
                 <TryCatch.Try>
                   <Assign sap:VirtualizedContainerService.HintSize="262.4,71.2" sap2010:WorkflowViewState.IdRef="Assign_12">
                     <Assign.To>
@@ -326,10 +326,10 @@
                       </Assign>
                     </ActivityAction>
                   </Catch>
-                  <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,141.6" sap2010:WorkflowViewState.IdRef="Catch`1_4">
+                  <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,22.4" sap2010:WorkflowViewState.IdRef="Catch`1_4">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
